@@ -1,0 +1,662 @@
+\documentclass[10pt]{beamer}
+\usepackage[abs]{overpic}
+\usetheme{CUDenver}
+
+\author{Xingmeng (Stella) Zhao}
+\title[CUDenver Theme]{ An Introduction to Random Forests \\with Application  to Vitiligo}
+\institute{University of Colorado Denver\\ Advised by Dr. Stephanie A. Santorico}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[t,plain]
+    \titlepage
+\end{frame}
+
+\begin{frame}[t]{Outline}
+\begin{center}
+	\textbf{Outline}
+\end{center}
+ \begin{enumerate}
+ \item Introduction
+ \item Previous Methods  
+ \begin{enumerate}
+    \item Decision Tree
+    \item Bagging
+  \end{enumerate}
+   \item Random Forest
+   \item Case Study: Vitiligo 
+   \item Conclusion and Discussion
+ \end{enumerate}
+\end{frame}
+
+%===============================================
+%    封面
+%===============================================
+\part{Methods}
+ \frame{\partpage}
+
+\begin{frame}[t]{Introduction}
+    \begin{figure}[H]
+    \centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.8\linewidth]{forest}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\end{frame}
+
+%===============================================
+%    
+%===============================================
+% RF constructed based on these two method
+
+% start the content of the presentation
+
+\begin{frame}[t]{Introduction}
+\begin{center}
+	  \textbf{Motivation} 
+\end{center}
+% Why are we interested in the random forest method?
+  \begin{itemize}
+  \item Suitable for classification of large high dimensional data
+%An ensemble classifier that consists of many decision trees.
+ \item Improved prediction accuracy over traditional methods
+ \item Reduced the chance of overfitting %by randomly selecting the variables to grow each tree
+ % \item Automatically preformed select variables.
+ %n additional, as more trees are added, the tendency to overfit generally decreases.
+   \end{itemize}
+\vspace{1cm}
+   \begin{block}{\textbf{Basic idea of random forest}}
+     Random forest = bagging + fully - grown decision tree
+  \end{block}
+\end{frame}
+% RF constructed based on these two method
+% Although It never approaches zero, we can ignore them in this case. 
+% Overfitting is a significant practical difficulty for decision tree models and many other predictive models. Overfitting happens when the learning algorithm continues to develop hypotheses that reduce training set error at the cost of an increased test set error [plot]. %There are several approaches to avoiding overfitting in building decision trees. 
+%A decision tree needs pruning to overcome overfitting. However, in a 
+
+%The testing performance of Random Forests does not decrease (due to overfitting) as the number of trees increases. Hence after certain number of trees the performance tend to stay in a certain value.
+%No algorithm that trains its model is immune to overfit. 
+%That which is considered noise in one problem could be considered signal in another problem, so only a magical algorithm could always discern what the user wants.
+%A Random Forest with few trees is quite prone to overfit to noise. 
+% This is easily demonstrated because RF with just one tree is the same as a single tree. As more trees are added, the tendency to overfit generally decreases. It never, however, approaches zero. 
+% The RF page here on Wikipedia gives a visual demonstration of this behavior.
+% https://en.wikipedia.org/wiki/Talk%3ARandom_forest#Algorithm
+
+% "Random forests has tendency to overfitting but as n the number of trees increases this tendency decreases. That's why as we add more trees the testing performance does not fluctuates and tend to stay in a minima, hence adding more trees does not lead to overfitting but actually decreases it." 
+
+%前面机器学习方法（四）决策树讲了经典的决策树算法，我们讲到决策树算法很容易过拟合，因为它是通过最佳策略来进行属性分裂的，这样往往容易在train data上效果好，但是在test data上效果不好。随机森林random forest算法，本质上是一种ensemble的方法，可以有效的降低过拟合，本文将具体讲解。
+%但是decision tree往往不够准确，因为很容易产生over-fitting：一颗很深的树往往有low bias, high variance；而随机森林Random Forest通过对对多个决策树进行平均，可以显著降低variance来减少过拟合。RF带来的问题是稍稍增加一点bias，以及模型的可解释性，但是获得的收益是显著提高了准确率。
+
+
+% before we talk about rf we need to introduce classsification tree and bagging first
+%===============================================
+%     Decision Tree
+%===============================================
+
+\section{Previous Methods}
+\subsection{Decision Tree}
+
+\begin{frame}[t]
+\begin{center}
+	\textbf{Decision Tree} %前后呼应
+\end{center}
+    \begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.8\linewidth]{treeplot}
+\caption{Recursive Binary Classification Tree}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[t]
+    \begin{enumerate}
+    \item Recursive Binary Partition
+    \begin{figure}[H]
+\centering%居中
+	%	\includegraphics[width=0.8\linewidth]{roc}
+\includegraphics[width=0.3\linewidth]{bitree}
+\includegraphics[width=0.3\linewidth]{bitreemodel}
+\caption{Recursive Binary Partitions}
+
+\label{tree}
+\end{figure}
+    \item Node Impurity Measures 
+   		\begin{itemize}
+	    \item Misclassification error: $1 - {max}_k \ { \hat{p}_{mk}} $
+	    \item Gini index: $\sum_{k=1}^{K}  \hat{p}_{mk} (1-\hat{p}_{mk}) = 1 - \sum_{k}{\hat{p}_{mk}}^2$ 
+	    \item Cross-entropy or deviance: $- \sum_{k=1}^{K}  \hat{p}_{mk} \  log \ \hat{p}_{mk}$
+	\end{itemize}
+	  where $\hat{p}_{mk} = \frac{1}{N_m}  \sum_{x_i\in R_m}  I (y_i = k)$\\
+	  $N_m$ is number of observations in region $R_m$  corresponding to node m.
+    \end{enumerate}
+  
+\end{frame}
+
+
+
+%how to split the data
+%===============================================
+%    Bagging
+%===============================================
+\subsection{Bagging}
+
+\begin{frame}[t]
+\begin{center}
+	\textbf{Bagging}
+\end{center}
+    \begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.7\linewidth]{fr}
+\caption{Multiple Decision Trees}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t]
+\begin{center}
+	\textbf{Bagging}
+\end{center}
+\begin{itemize}
+    \item Introduction by Breiman (1996)
+    \begin{itemize}
+    \item "Bagging" stands for "\textbf{b}ootstrap \textbf{agg}regat\textbf{ing} "
+    \item An ensemble method for improving unstable estimation or classification schemes, such as classification trees. 
+    \end{itemize}
+    
+    
+\item \textbf{The main idea}:\\
+ 	\begin{itemize}
+    \item Construct B bootstrapped training sets.
+    \item Each individual trees are grown deep and not pruned.
+    \item Each tree has a high variance with low bias and averaging the B trees brings down the variance.
+    \end{itemize}
+  \item \textbf{Limitation}:  
+  \begin{itemize}
+	 \item Improved prediction accuracy at the cost of interpretability. It is not clear which variables are the most important. 
+	 \item Correlation between the trees.
+      \end{itemize}
+
+\end{itemize}
+\end{frame}
+
+%\begin{frame}[t]
+%\vspace{3cm}
+%	 \begin{itemize}
+%	 	 \item Why does bagging generate correlated trees?
+%		 \item How random forests reduce the model variance?
+	% \end{itemize}
+%\end{frame}
+
+    
+
+    
+    
+    % %Why
+%\item Bagging uses a different random subset %	\item All trees are fully grown binary tree (unpruned) and at each node in the tree one searches over all features/predictors to find the feature that best splits the data at that node.
+%	\item Assume each classification tree has variance equal to $\sigma^2$.  Thus, Suppose we generate B different bootstrapped training datasets, the variance of average is equal to $\sigma^2/B$. 
+%\end{itemize}
+
+
+
+
+
+ 
+% Bagging has a single parameter, which is the number of trees. All trees are fully grown binary tree (unpruned) and at each node in the tree one searches over all features/predictors to find the feature that best splits the data at that node.
+%Bagging (or Bootstrap Aggregating), uses a different random subset of the original dataset for each model in the ensemble. Specifically, BigML uses by default a sampling rate of 100% with replacement for each model, this means that some of the original instances will be repeated and others left out. 
+%Random Decision Forests extend this technique by only considering a random subset of the input fields at each split. Generally, Random Decision Forests are the most powerful type of ensemble. For datasets with many noisy fields you may need to adjust a Random Decision Forest's "random candidates" parameter for good results. Bagging, however, does not have this parameter and may occasionally give better out-of-the-box performance.
+%以减少over-fitting（降低model的variance）。
+%Given a standard training set D of size n, bagging generates m new training sets D_i, each of size n′, by sampling from D uniformly and with replacement. This kind of sample is known as a bootstrap sample. The m models are fitted using the above m bootstrap samples and combined by averaging the output (for regression) or voting (for classification).
+% B是一个可调节的参数，一般来说选用几百或者几千棵树，或者通过cross-validation来选择最佳的B。另外，也可以通过观察out-of-bag error：在所有训练数据xi上的平均预测error（预测xi用的是些那没有用到xi来训练的trees。）同时观察train error和test error（out-of-bag error）会发现，在一定数量的tree之后，两种error会分开。
+
+\section{Random Forest}
+
+\subsection{Random Forest Overview}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Random Forests}
+\end{center}
+\begin{itemize}
+	\item Extend bagging by considering a random subset of the predictors.
+    \item At each root split utilizes a bunch of de-correlated trees and then averages them to get a prediction. 
+    \item Improved the variance reduction of bagging by reducing the correlation between the trees.
+    \item Automatically selected importance variable 
+    \item Bagging is a special case of a random forest if a random subset of predictors equal to all predictors.
+
+	
+\end{itemize}
+\end{frame}
+
+
+
+
+%	\item A classification tree provides interpretation but has high variance and can result in overfitting. %why unstable if each single classifier is unstable, that is it has high variance. the aggregated classifier \bar{f} has smaller variance than single one 
+	% Unstable learning algotithm: small change in the training set result in large change in predictions
+	% \item Data ($y_i, \vec{x_i}$), i=1,..., n are independently drawn from same distribution. So, we assume each tree has same variance $\sigma^2$
+%Bagging reduces the model variance 
+%if each single classifier is unstable, that is, it has high variance. the aggregated classifier $\bar{f}$ has smaller variance than single one 
+		
+
+
+
+
+\section{Random Forest }
+\begin{frame}[t]
+\begin{center}
+	\textbf{Random Forests Implementation}
+\end{center}
+   \begin{itemize}
+   	\item Random Forest algorithm
+    \item Tuning Parameters 
+    \item Out-of-Bag error
+    \item Variable Importance
+   \end{itemize}
+       
+\end{frame}
+
+\subsection{Random Forest Algorithm}
+\begin{frame}[t]
+	
+
+
+\begin{center}
+	\textbf{Random Forest Algorithm}
+\end{center}
+\begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.8\linewidth]{alg3}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\begin{center}
+	\scriptsize{\emph{Resource from The Elements of Statistical Learning, Trevor Hastie}}
+\end{center}
+\end{frame}
+
+
+\subsection{Out of Bag error And Tuning Parameters}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Out of Bag Error (OOB)}
+\end{center} 
+\begin{itemize}
+		\item Bootstrap samples use approximately 2/3 observations of original data.
+		\item Out-of-bag sample constructed by remaining approximately 1/3 observations.
+		%are left out of the bootstrap sample and not used to train the corresponding tree classifier.
+		\item OOB error is the mean prediction error calculated by out-of-bag sample.
+	\end{itemize}
+	\begin{center}
+	\textbf{Tuning Parameters}
+\end{center}
+\begin{itemize}
+	%\item Tuning parameters are knobs to control bias and variance tradeoff for machine learning algorithms.
+	\item A random forest has 2 primary parameters: 
+\begin{itemize}
+\item Number of predictor used per node (mtry) 
+ \vspace{0.1cm}
+%  - de-correlates the trees 
+\item Number of trees in the forest (ntree) % - higher number reduce more variable  
+\end{itemize}
+\item The typical value for mtry is $\sqrt{p}$. 
+	\end{itemize}
+\end{frame}
+
+
+%\subsection{Tuning Parameters}
+%\begin{frame}[t]
+
+%why oob 计算公式 
+
+
+%The first parameter is the same as bagging, the number of trees (ntree). The second parameter is mtry which is how many predictors to search over to find the best feature.
+% and the minimum node size is one. 
+
+%\item In practice the best values for these parameters will depend on specific problem, and they should be treated as tuning parameters. Once the OOB error stabilizes, the training can be terminated. 
+%\end{frame}
+ %this parameter is usually 1/3*D for regression and sqrt(D) for classification. thus during tree creation randomly mtry number of features are chosen from all available features and the best feature that splits the data is chosen.
+
+\subsection{Variable Importance}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Variable Importance}
+\end{center}
+\begin{itemize}
+	\item  MeanDecreasingAccuracy
+	\begin{itemize}
+	\item Passes the OOB samples down the tree and records prediction accuracy.
+	\item A variable is then selected and its values in the OOB samples are randomly permuted.
+	\item OOB samples are passed down the tree and prediction accuracy is computed again.
+	\item A decrease in accuracy obtained by this permutation is averaged over all trees for each variable and it provides the importance of that variable (the higher the decreasing the higher the importance).
+	\end{itemize}
+	\item  MeanDecreasingGini
+	\begin{itemize}
+		\item Variable importance is calculated by looking at the splits of each tree
+		\item The importance of the splitting variable is proportional to the improvement to the gini index given by that split and it is accumulated (for each variable) over all the trees in the forest.
+	\end{itemize}
+	The top variables contribute more to the model than the bottom ones and also have high predictive power in classifying. 
+\end{itemize}
+
+\end{frame}
+%The candidate split-variable selection increases the chance that any single variable gets included in a random forest, while no such selection occurs with boosting.
+
+%\subsection{Confusion Matrix}
+%\begin{frame}[t]{Confusion Matrix}
+%	\begin{figure}[H]
+%\centering%居中
+	%	\includegraphics[width=0.8\linewidth]{roc}
+%	\includegraphics[width=0.45\linewidth]{confusionmx}
+%\caption{Confusion matrix, where P is the label of class 1 and N is the label of a second class or the label of all classes that are not class 1 in a multi-class setting.}
+%%\caption{}%这个标题已经取消
+%\label{tree}
+%\end{figure}
+%Accuracy = (TP + TN) / (TP + TN + FP + FN)
+%\end{frame}
+
+%\subsection{HWE and LD}
+%\begin{frame}[t]{Hardy-Weinberg Equilibrium and Linkage disequilibrium}
+%\begin{itemize}
+%	\item $H_o$ : HWE holds in the population, i.e., P(AA)=$p^2$, P(Aa)=2p(1-p)，P(aa) = $(1-p)^2$, and p=P(A) where A,a is genotype.
+%	\item $H_1$ : HWE does not holds in the population, i.e., some equality does not hold.
+%	\item We will start by considering SNPs for unrelated individual under the assumption of Hardy-Weinberg Equilibrium. 
+%	\item Linkage disequilibrium (LD) is the nonrandom associations of alleles. That means these two SNPs are highly correlated and the correlation between a true risk SNP and SNPs in LD may lead to reducing variable importance for the true risk. if our random forest model exists LD SNPs, it even may hinder the discovery of strong effects shared by several SNPs.
+
+%\end{itemize}
+%	\end{frame}
+
+%\subsection{R package}
+%\begin{frame}[t]{R Pckage}
+	%\end{frame}
+
+\part{Case Study}
+\frame{\partpage}
+
+\section{Vitiligo}
+\begin{frame}[t]
+   \begin{center}
+   	\textbf{Case Study: Vitiligo}
+   \end{center}
+    \begin{itemize}
+    \item Data Description
+    \item Tuning Parameters %consistent with model 
+    \item Model Performance
+    \begin{itemize}
+    \item Risk Gene Analysis
+    \item Performance on Prediction 
+    \end{itemize}
+       \end{itemize}
+       \begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.6\linewidth]{vitiligo}
+%\caption{vitiligo disease}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\begin{center}
+\scriptsize{\emph{Sources: Google image and Mayo Clinic}}
+\end{center}
+\end{frame}
+
+
+
+
+\subsection{Data Description}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Case Study}
+\end{center}
+\begin{itemize}
+	\item \textbf{Data}: Genotypes measured for 290 single nucleotide polymorphisms (SNPs) in 4008 individuals with 2181 controls and 1827 cases.
+    \item \textbf{Goal}: To predict whether a person will have vitiligo or not and find disease association genes. 
+%based on the 290 genes that have the largest variance in the training set. 
+    \item \textbf{Implementation}: 
+\begin{itemize}
+\item Perform Hardy-Weinberg Equilibrium with Bonferroni multiple Correction to select indipendent 286 SNPs out of 290.  
+\item Perform random forest on the vitiligo dataset by using R package "randomForest". 
+\item Randomly split the original dataset into the training set and a test set in the ratio of $70\% \ to \ 30\%$.  \end{itemize}
+\end{itemize}
+%The vitiligo dataset consists of genotypes for 4008 individuals for 290 SNPs with 2181 controls and 1827 cases. After HWE test, there are 4 SNPs with a p-value less than this significant level. Therefore, we will use 286 SNPs in the random forest analysis. We randomly split the set of individuals into a training set and a test set in the ratio of $70\% \ to \ 30\%$. 
+  
+\end{frame}
+
+
+\begin{frame}[t]
+\begin{center}
+	\textbf{Data Description}
+\end{center}
+Here is an example of  the variables within the dataset
+\begin{figure}[H]
+\centering%居中
+\includegraphics[width=0.9\linewidth]{table1}
+
+\label{table}
+\end{figure}
+where 
+\begin{itemize}
+	\item Phenotype equal to 1 = control and 2 = case
+	\item Value of SNPs represents the number of minor allele 
+\end{itemize}  
+\end{frame}
+
+
+
+\subsection{Tuning Parameters}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Tuning Parameters}
+\end{center}
+\begin{figure}[H]
+\centering%居中
+\includegraphics[width=0.7\linewidth]{conv}
+\caption{Convergence of OOB Across Different mtry value}
+% % when mtry = 1 and mtry =17, curves are not converge stable at the tail. After mtry above 20, the curves of oob are table at the tail and with the mtry increasing, the speed of convergence quickly but not improve too much.  }
+%%\caption{}%这个标题已经取消
+\label{oob}
+\end{figure}
+\end{frame}
+
+\subsection{Tuning Parameters}
+\begin{frame}[t]
+\begin{itemize}
+	\item The OOB convergence plot shows that after ntree=1500 and mtry = 20, the OOB is stable at the tail.
+	\item Using test dataset to calculate prediction accuracy.
+	%\item Grid Search Table show the model with ntree= 1500 and mtry=25 has higher prediction accuracy. 
+	\item The optimal model is ntree = 1500 and mtry = 25 with OOB error = 0.3515. 
+\end{itemize}
+	\begin{table}[ht]
+\centering
+\caption{Grid Search to choose optimal tuning parameter}
+\begin{tabular}{rrrrr}
+  \hline
+   &  &  & accuracy\\
+ & mtry & ntree = 500 & ntree = 1000 & ntree =1500 \\ 
+  \hline
+1 & 20 & 0.6428 & 0.6374 & 0.6439 \\ 
+  2 & 25 & 0.6314 & 0.6403 & \textbf{0.6545} \\ 
+  3 & 30 & 0.6371 & 0.6449 & 0.6499 \\ 
+  4 & 35 & 0.6449 & 0.6414 & 0.6488 \\ 
+   \hline
+\end{tabular}
+   \label{gridsch}
+\end{table}
+where prediction accuracy =  $P ( true \ prediction \ in \ the \ test \ dataset)$
+\end{frame}
+
+\subsection{Variable Selection}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Variable Importance }
+\end{center}
+\begin{figure}[H]
+\centering%居中
+	\includegraphics[width=0.7\linewidth]{VII}
+\caption{The left panel gives the mean decrease in accuracy plot, and The right panel is the MeanDecreaseGini  }
+%%\caption{}%这个标题已经取消
+\label{VI}
+\end{figure}
+\end{frame}
+%The left panel gives the mean decrease in accuracy plot which represents the how much removing each variable reduces the accuracy of the model. The right panel is the Mean Decrease Gini index which is the measure of variable importance based on the Gini impurity index for the calculation of splits in trees. 
+%Say Here
+
+\subsection{Model Performance}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Risk Gene}
+\end{center}
+\begin{figure}[H]
+\centering%居中
+ \includegraphics[width=0.7\linewidth]{geneinf}
+\includegraphics[width=0.3\linewidth]{topp25}
+\caption{Left panel is table of top five SNPs' chromosome location information based on the Gini index and right panel is variables importance by Gini index for top 25 predictors}
+%%\caption{}%这个标题已经取消
+
+\end{figure}
+ %They are rs1126809, rs60131261, rs4713270, rs4268748, rs4785587 corresponding to gene TYR, HLA-A, HLA-A, MC1R, and MC1R, separately
+\end{frame}
+
+\subsection{Model Performance}
+\begin{frame}[t]
+%{Apply the Random forest classifier on test dataset}
+\begin{center}
+	\textbf{Performance on Prediction}
+\end{center}
+	
+\begin{table}[ht]
+
+\centering
+ \caption{Confusion Matrix calculated on test set}
+%, class 1 stand for an individual with vitiligo disease and class 2 stands for an individual without vitiligo disease. Therefore, we consider top 5 variables as the contribute element for vitiligo disease.
+\begin{tabular}{rrrr}
+  \hline
+ &  predicted class\\
+  & & control  & case \\ 
+  \hline
+observed class& control &   527 &   277 \\ 
+   & case &   127 &   272 \\ 
+   \hline
+\end{tabular}
+    \label{cm}
+   \end{table}
+   \begin{itemize}
+   	\item Prediction accuracy is equal to  0.665 
+   	\item Misclassification rate is equal to 0.3358.
+   	\item If we just train the model with there five variables, the prediction accuracy is not decreasing too much, which means there is not much information gain. 
+   \end{itemize}
+    
+\end{frame}
+
+
+%\subsection{Prediction Analysis}
+%\begin{frame}[t]
+%\begin{center}
+%	Risk Variant 
+%\end{center}
+
+%\begin{table}[ht]
+%\centering
+%\caption{SNPs and its Chromosome location}
+%\begin{tabular}{rrrrr}
+%  \hline
+% Chr & SNPs  & Position (bp) (Build 37) & Locus  & EA/OA \\ 
+%  \hline
+%11 & rs1126809 & 89,017,961 & TYR & A/G\\ 
+%6 & rs60131261 & 29,937,335 & HLA-A & -/TTTA \\ 
+%6&  rs4713270 & 29966920 & HLA-A & A/G
+% \\ 
+%16& rs4268748 & 90,026,512 & MC1R & C/T  \\ 
+%16& rs4785587 & 89772619  & MC1R & A/G\\ 
+%   \hline
+%\end{tabular}
+%   \label{chr}
+ %  \end{table}
+%\end{frame}
+
+\section{Conclusion and Discussion }
+\begin{frame}[t]
+\begin{center}
+	\textbf{Conclusion}
+\end{center}
+
+\begin{itemize}
+	\item Identified five most important SNPs are corresponding to gene TYR, HLA-A, and MC1R. 
+    \item Consider these three genes associated with vitiligo, which have been confirmed by existing articles
+    \item Rs60131261 and rs4713270 exist high linkage disequilibrium ($R^2$=0.9773), which may reduce variable importance for other true risk SNPs.
+    \item Vitiligo is a multifactorial disease which may reduce model prediction accuracy.
+\end{itemize}
+\end{frame}
+\begin{frame}[t]
+\begin{center}
+	\textbf{Discussion}
+\end{center}
+\begin{itemize}
+	\item Prevented two SNPs in high linkage disequilibrium appearing in the same tree or use haplotypes instead of SNPs to build RF models. 
+	\item Imputed the missing data by proximity. 
+	\item Compared performance of different classification methods with Random Forest, such as discriminant analysis, support vector machines and neural networks.
+\end{itemize}
+\end{frame}
+
+\section{Question}
+\begin{frame}[t]
+\vspace{2.5cm}
+\begin{center}
+		\bf \Huge Questions?
+\end{center}
+\end{frame}
+\section{Thanks}
+\begin{frame}[t]
+\vspace{2.5cm}
+\begin{center}
+	\bf \Huge Thank you!!!
+\end{center}
+\end{frame}
+\section{appendix}
+    \begin{frame}[t]
+The idea about why does bagging generate correlated trees? and How random forests control the model variance?
+ \begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.5\linewidth]{variance}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+
+where $\rho$ represents correlation between pairwise of trees.\\
+\begin{itemize}
+\item Therefore, as B increases, the second term become negligible, but the first remains, and the size of the correlation of pairs of bagged trees limits the benefits of averaging.
+\end{itemize}
+
+
+
+\end{frame}
+\begin{frame}[t]
+OOB 1/3	
+\end{frame}
+\begin{frame}[t]
+
+ \begin{figure}[H]
+\centering%居中
+	%	\includegraphics{roc}
+	    \includegraphics[width=0.7\linewidth]{bagging}
+\caption{Bagging}
+%%\caption{}%这个标题已经取消
+\label{rbs}
+\end{figure}
+\end{frame}
+
+
+
+	%R implementation: randomForest
+
+
+
+
+
+\end{document}
+
