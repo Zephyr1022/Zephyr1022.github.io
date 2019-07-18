@@ -5,7 +5,7 @@ remote_theme             : "pages-themes/leap-day"
 # leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-title                    : By Blog
+title                    :  Blog
 title_separator          : "|"
 SEOTitle                 : "Stella Zhao | BY Blog"
 description              : "Professional Portfolio"
