@@ -46,3 +46,6 @@ author:
   avatar           : "/assets/images/icons/isss_tile.png"
   bio              : "Data Analyst"
   location         : "Denver, Colorado"
+
+sass:
+    sass_dir: ./_scss
