@@ -17,7 +17,7 @@ another_url: another value
 # Sidebar settings
 sidebar: true                           # 是否开启侧边栏
 sidebar-about-description: "Blablabla"
-sidebar-avatar:/assets/images/icons/isss_tile.png
+# sidebar-avatar: /assets/images/icons/isss_tile.png
 
 # SNS settings
 RSS: false
