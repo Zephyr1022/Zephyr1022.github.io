@@ -1,17 +1,18 @@
 # Theme Settings
 # theme: jekyll-theme-leap-day
 remote_theme             : "pages-themes/leap-day"
-leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 
 
 # Site Settings
 locale                   : "en-US"
 title                    : "Blog"
+title_separator          : "|"
 SEOTitle                 : Stella Zhao | BY Blog
 description              : "Professional Portfolio"
 url                      : "https://zephyr1022.github.io/"
-header-img               :  /assets/images/icons/isss_tile.png
+header-img               :  /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
 
 
 # title: Xingmeng "Stella" Zhao
