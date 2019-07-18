@@ -1,4 +1,5 @@
 # Theme Settings
+theme                    : jekyll-theme-leap-day
 
 # Site Settings
 title                    : "Blog"
@@ -8,15 +9,15 @@ description              : "Professional Portfolio"
 url                      : "https://zephyr1022.github.io/"
 header-img               :  /assets/images/icons/isss_tile.png
 
-theme: jekyll-theme-leap-day
-title: Xingmeng "Stella" Zhao
-zip_url: http://example.com/download.zip
-another_url: another value
+
+# title: Xingmeng "Stella" Zhao
+# zip_url: http://example.com/download.zip
+# another_url: another value
 
 # Sidebar settings
 sidebar: true                           # 是否开启侧边栏
 sidebar-about-description: "Blablabla"
-# sidebar-avatar: /assets/images/icons/isss_tile.png
+sidebar-avatar: /assets/images/icons/isss_tile.png
 
 # SNS settings
 # RSS: false
