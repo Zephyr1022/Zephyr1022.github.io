@@ -1,8 +1,10 @@
 # Theme Settings
 # theme: jekyll-theme-leap-day
-theme: jekyll-theme-leap-day
+# theme: jekyll-theme-leap-day
 # remote_theme             : "pages-themes/leap-day"
 # leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme             : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 title                    :  Blog
@@ -41,20 +43,14 @@ sidebar-avatar: /assets/images/icons/isss_tile.png
 # ga_domain: auto
 
 # Site Author
-author:
-  name             : "Stella Zhao"
-  avatar           : "/assets/images/icons/isss_tile.png"
-  bio              : "Data Analyst"
-  location         : "Denver, Colorado"
+# author:
+  #name             : "Stella Zhao"
+  #avatar           : "/assets/images/icons/isss_tile.png"
+  #bio              : "Data Analyst"
+  #location         : "Denver, Colorado"
 
 
 # This tells Jekyll to look in the _scss directory for your Sass/SCSS partials. Because of this, you'll also need to shorten your import statement to: @import 'stylesheet';
 sass:
     sass_dir: ./_scss
     
- highlight:
-  enable: true
-  line_number: true
-  auto_detect: true
-  tab_replace:
-
