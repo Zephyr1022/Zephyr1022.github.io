@@ -5,6 +5,9 @@ locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
 name                     : "Stella Zhao"
+description              : "Test"
+url                      : "https://www.zephyerstella.com"
+
 theme: jekyll-theme-leap-day
 title: Xingmeng "Stella" Zhao
 zip_url: http://example.com/download.zip
