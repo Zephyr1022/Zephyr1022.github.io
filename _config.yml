@@ -1,3 +1,10 @@
+# Theme Settings
+
+# Site Settings
+locale                   : "en-US"
+title                    : "Blog"
+title_separator          : "|"
+name                     : "Stella Zhao"
 theme: jekyll-theme-leap-day
 title: Xingmeng "Stella" Zhao
 zip_url: http://example.com/download.zip
