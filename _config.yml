@@ -1,13 +1,12 @@
 # Theme Settings
 
 # Site Settings
-locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
 name                     : "Stella Zhao"
 description              : "Professional Portfolio"
 url                      : "https://zephyr1022.github.io/"
-header-img               : /assets/images/icons/isss_tile.png
+header-img               :  /assets/images/icons/isss_tile.png
 
 theme: jekyll-theme-leap-day
 title: Xingmeng "Stella" Zhao
@@ -20,14 +19,12 @@ sidebar-about-description: "Blablabla"
 # sidebar-avatar: /assets/images/icons/isss_tile.png
 
 # SNS settings
-RSS: false
-weibo_username:     username
-zhihu_username:     username
-github_username:    username
-facebook_username:  username
+# RSS: false
+# weibo_username:     username
+# zhihu_username:     username
+# github_username:    username
+# facebook_username:  username
 
-# Disqus settings（https://disqus.com/）
-disqus_username: qiubaiying
 
 # Analytics settings
 # Baidu Analytics
@@ -36,3 +33,7 @@ disqus_username: qiubaiying
 # Google Analytics
 # ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
 # ga_domain: auto
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
