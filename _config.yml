@@ -51,4 +51,10 @@ author:
 # This tells Jekyll to look in the _scss directory for your Sass/SCSS partials. Because of this, you'll also need to shorten your import statement to: @import 'stylesheet';
 sass:
     sass_dir: ./_scss
+    
+ highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
 
