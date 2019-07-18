@@ -5,10 +5,34 @@ locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
 name                     : "Stella Zhao"
-description              : "Test"
-url                      : "https://www.zephyerstella.com"
+description              : "Professional Portfolio"
+url                      : "https://zephyr1022.github.io/"
+header-img               : /assets/images/icons/isss_tile.png
 
 theme: jekyll-theme-leap-day
 title: Xingmeng "Stella" Zhao
 zip_url: http://example.com/download.zip
 another_url: another value
+
+# Sidebar settings
+sidebar: true                           # 是否开启侧边栏
+sidebar-about-description: "Blablabla"
+sidebar-avatar:/assets/images/icons/isss_tile.png
+
+# SNS settings
+RSS: false
+weibo_username:     username
+zhihu_username:     username
+github_username:    username
+facebook_username:  username
+
+# Disqus settings（https://disqus.com/）
+disqus_username: qiubaiying
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: 83e259f69b37d02a4633a2b7d960139c
+
+# Google Analytics
+# ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+# ga_domain: auto
