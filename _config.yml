@@ -3,16 +3,15 @@
 remote_theme             : "pages-themes/leap-day"
 # leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-
-
 # Site Settings
-locale                   : "en-US"
-title                    : "Blog"
+title                    : By Blog
 title_separator          : "|"
 SEOTitle                 : Stella Zhao | BY Blog
 description              : "Professional Portfolio"
 url                      : "https://zephyr1022.github.io/"
 header-img               :  /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
+baseurl: ""               # for example, '/blog' if your blog hosted on 'host/blog'
+keyword                  : "BY, BY Blog, Zephyer1022, Stella, Data"
 
 
 # title: Xingmeng "Stella" Zhao
