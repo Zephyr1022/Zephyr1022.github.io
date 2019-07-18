@@ -6,6 +6,7 @@ leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "di
 
 
 # Site Settings
+locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
 name                     : "Stella Zhao"
@@ -39,6 +40,9 @@ sidebar-avatar: /assets/images/icons/isss_tile.png
 # ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
 # ga_domain: auto
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# Site Author
+author:
+  name             : "Stella Zhao"
+  avatar           : "/assets/images/icons/isss_tile.png"
+  bio              : "Data Analyst"
+  location         : "Denver, Colorado"
