@@ -2,11 +2,10 @@
 # Theme Settings
 # theme: jekyll-theme-leap-day
 # remote_theme             : "pages-themes/leap-day"
-# leap_day_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-# remote_theme             : "mmistakes/minimal-mistakes"
-# minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+ remote_theme             : "mmistakes/minimal-mistakes"
+ minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-theme: jekyll-theme-leap-day
+# theme: jekyll-theme-leap-day
 
 # Site Settings
 title                    :  Blog
