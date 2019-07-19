@@ -1,12 +1,13 @@
 # using "jekyll serve" to update this file and restart 
 # Theme Settings
 # theme: jekyll-theme-leap-day
-theme                    : "minimal-mistakes-jekyll"
+# theme                    : "minimal-mistakes-jekyll"
 # remote_theme             : "pages-themes/leap-day"
 # remote_theme             : "mmistakes/minimal-mistakes"
 # minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# theme: jekyll-theme-leap-day
+remote_theme             : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 title                    :  Blog
