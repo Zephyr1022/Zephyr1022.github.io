@@ -129,27 +129,28 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/yxslpts/"
 
+
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: http://twitter.com/cse_as
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url:
+#    - label: "Twitter"
+#      icon: "fab fa-fw fa-twitter-square"
+#      url: http://twitter.com/cse_as
+#    - label: "Bitbucket"
+#      icon: "fab fa-fw fa-bitbucket"
+#      # url:
+
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: https://github.com/cseas
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
+      url: "https://github.com/Zephyr1022/Zephyr1022.github.io"
+      
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/vincent.zhao.908"
+   
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/abhijeeeeeeeet"
+      url: "ttps://www.instagram.com/yxslpts/"
 
 
 # Reading Files
