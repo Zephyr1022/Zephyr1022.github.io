@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "da
 locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
-name                     : "Xingmeng Zhao"
+name                     : "Xingmeng "Stella" Zhao"
 description              : "Professional Profile "
 url                      : "https://Zephyr1022.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Xingmeng Stella Zhao"
+  name             : "Xingmeng "Stella" Zhao"
   avatar           : "/assets/image/icons/isss_tile.png"
   bio              : "Professional Profile"
   location         : "Denver, Colorado"
