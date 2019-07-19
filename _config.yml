@@ -105,29 +105,29 @@ author:
   avatar           : "/assets/image/icons/isss_tile.png"
   bio              : "Professional Profile"
   location         : "Denver, Colorado"
-  email            :
+  email            : "XINGMENG.ZHAO@UCDENVER.EDU"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:contact.abhijeetsingh@gmail.com
+      icon: "fas fa-fw fa-envelope-square" # <i class="fa fa-envelope-square" aria-hidden="true"></i>
+      url: mailto:XINGMENG.ZHAO@UCDENVER.EDU
     - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://www.absingh.com"
+      icon: "fas fa-fw fa-link" #ref: https://fontawesome.com/v4.7.0/icon/link
+      url: "https://zephyr1022.github.io/"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/thatniceman"
+      url: "https://www.linkedin.com/in/stella-zhao-zephyr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/cseas"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/cse_as"
+      url: "https://github.com/Zephyr1022/Zephyr1022.github.io"
+   # - label: "Twitter"
+   #   icon: "fab fa-fw fa-twitter-square"
+   #   url: "https://twitter.com/cse_as"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/thatniceman"
+      url: "https://www.facebook.com/vincent.zhao.908"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/abhijeeeeeeeet"
+      url: "https://www.instagram.com/yxslpts/"
 
 # Site Footer
 footer:
