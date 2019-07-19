@@ -105,10 +105,9 @@ author:
   avatar           : "/assets/image/icons/isss_tile.png"
   bio              : "Professional Profile"
   location         : "Denver, Colorado"
-  email            : "XINGMENG.ZHAO@UCDENVER.EDU"
+  email            : 
   links:
-  
-    - label: "GitHub | Please open here for the original files"
+    - label: "GitHub - Please open here for the original files"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Zephyr1022/Zephyr1022.github.io"
     - label: "LinkedIn"
@@ -142,7 +141,7 @@ footer:
 #      icon: "fab fa-fw fa-bitbucket"
 #      # url:
 
-    - label: "GitHub"
+    - label: "GitHub - Please open here for the original files"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Zephyr1022/Zephyr1022.github.io"
       
