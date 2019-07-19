@@ -15,6 +15,15 @@ remote_theme             :  "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 header:
   image: /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
+  image_description: "The Blue Lake Loop from San Juan Mountain"
+  
+excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
+header:
+  overlay_image:  /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  actions:
+    - label: "More Info"
+      url: "https://unsplash.com"
 
 # Site Settings
 locale                   : "en-US"
