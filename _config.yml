@@ -18,11 +18,11 @@ minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "da
 locale                   : "en-US"
 title                    : "Blog"
 title_separator          : "|"
-name                     : "Abhijeet Singh"
-description              : "Developer & Designer"
-url                      : "https://www.absingh.com"
+name                     : "Xingmeng Zhao"
+description              : "Professional Profile "
+url                      : "https://Zephyr1022.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "cseas/cseas.github.io"
+repository               : "Zephyr1022/Zephyr1022.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # false (default)
 words_per_minute         : 200
