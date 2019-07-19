@@ -107,7 +107,7 @@ author:
   location         : "Denver, Colorado"
   email            : 
   links:
-    - label: "GitHub - Please open here for the original files"
+    - label: "GitHub | OPEN HERE FOR ORIGINAL FILES"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Zephyr1022/Zephyr1022.github.io"
     - label: "LinkedIn"
@@ -126,9 +126,9 @@ author:
   #  - label: "Email"
   #    icon: "fas fa-fw fa-envelope-square" # <i class="fa fa-envelope-square" aria-hidden="true"></i>
   #    url: mailto:XINGMENG.ZHAO@UCDENVER.EDU
-  # - label: "Website"
-  #    icon: "fas fa-fw fa-link" #ref: https://fontawesome.com/v4.7.0/icon/link
-  #    url: "https://zephyr1022.github.io/"
+   - label: "Website"
+     icon: "fas fa-fw fa-link" #ref: https://fontawesome.com/v4.7.0/icon/link
+     url: "https://zephyr1022.github.io/"
 
 
 # Site Footer
