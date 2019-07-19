@@ -322,3 +322,7 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+    
+    
+ #   YAML front matter is perhaps the most important aspect of creating sites through Jekyll. It allows you to control how Jekyll processes and builds pages, create page-specific variables, and triggers file processing. 
+ 
