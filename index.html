@@ -8,4 +8,16 @@ header:
   image: /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
   image_description: "The Blue Lake Loop from San Juan Mountain"
 
+title: My Blog
+description: Like I said, my bloggg!
 ---
+
+<div class="page-header">
+  <h1>{{title}}</h1>
+  <p class="lead">{{description}}</p>
+</div>
+<ul>
+  {{#each example.custom.variables}}
+  <li>{{.}}</li>
+  {{/each}}
+</ul>
