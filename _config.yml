@@ -1,10 +1,5 @@
 ---
 layout: home
-
-header:
-  image: /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
-  image_description: "The Blue Lake Loop from San Juan Mountain"
-  
 excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
 header:
   overlay_image:  /assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg
@@ -12,7 +7,7 @@ header:
   actions:
     - label: "More Info"
       url: "https://unsplash.com"
-
+paginate_path: /blog/page:num
 ---
 # Welcome to Jekyll!
 #
