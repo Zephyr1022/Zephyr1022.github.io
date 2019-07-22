@@ -15,5 +15,5 @@
 
 .play{ animation: pchange 10s ease-out infinite alternate;}
 @keyframes pchange {
-        0%,45% {        margin-left: 0px;       }
-        50%,100% {       margin-left: -300px;   }
+        0%,45%   { margin-left: 0px;     }
+        50%,100% { margin-left: -300px;  }
