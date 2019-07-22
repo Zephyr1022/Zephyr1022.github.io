@@ -1,26 +1,24 @@
-
-# frame{position:absolute;width:300px;height:200px;overflow:hidden;border-radius:5px}
-# dis{position:absolute;left:-50px;top:-10px;opacity:.5}
-# dis li{display:inline-block;width:200px;height:20px;margin:0 50px;float:left;text-align:center;color:#fff;border-radius:10px;background:#000}
-# photos img{float:left;width:300px;height:200px}
-# photos {  position: absolute;z-index:9;  width: calc(300px * 2);/*---修改图片数量的话需要修改下面的动画参数*/  }
-
-# .play{ animation: pchange 10s ease-out infinite alternate;}
-# @keyframes pchange {
-        0%,45%   { margin-left: 0px;     }
-        50%,100% { margin-left: -300px;  }
-	
-	
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
 
-	
+$foreground:#2c3e50;
+$foreground-light:#34495e;
+
+$size:50px;
+$ratio:1.2;
+$transition-time:0.3s;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align:center;
+}
+
 .play {
   display:block;
   width: 0; 
-	height: 0; 
-	border-top: $size solid transparent;
-	border-bottom: $size solid transparent;
-	border-left: ($size*$ratio) solid $foreground;
+  height: 0; 
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: ($size*$ratio) solid $foreground;
   margin: ($size * 2) auto $size auto;
   position:relative;
   z-index:1;
@@ -77,7 +75,7 @@
 }
 
 h1 {
-  text-transform:uppercase;
+   text-transform:uppercase;
   color:$foreground-light;
   letter-spacing:2px;
   font-size:2em;
@@ -97,6 +95,6 @@ h1 {
   margin: 0.5em 1.5em;
   display:inline-block;
   &:hover, &:focus {
-  color:$foreground;
+    color:$foreground;
   }
 }
