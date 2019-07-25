@@ -321,10 +321,10 @@ plugins:
   - jekyll-gallery-generator
                               
 gallery:
-  dir: /Albums               # Path to the gallery
+  dir: /Albums              # Path to the gallery
   symlink: false            # false: copy images into _site. true: create symbolic links (saves disk space)
-  title: "Photos"           # Title for gallery index page
-  title_prefix: "Photos: "  # Title prefix for gallery pages. Gallery title = title_prefix + gallery_name
+  title: "Albums"           # Title for gallery index page
+  title_prefix: "Albums: "  # Title prefix for gallery pages. Gallery title = title_prefix + gallery_name
   sort_field: "date_time"   # How to sort galleries on the index page.
   # Possible values are: title, date_time, best_image
   
@@ -333,38 +333,37 @@ gallery:
     y: 400                  # max height of thumbnails (in pixels)
   # The following options are for individual galleries.
   
-  
-  galleries:
-    People:
-      best_image: People1.jpg  # The image to show on the gallery index page. Defaults to the last image.
-      sort_reverse: true
-    Nature:
-      best_image: Salt Lake.jpg  # The image to show on the gallery index page. Defaults to the last image.
-      name: "Salt Lake" # Defaults to directory name, replacing _ with spaces
+#  galleries:
+#    People:
+#      best_image: People1.jpg  # The image to show on the gallery index page. Defaults to the last image.
+#      sort_reverse: true
+#    Nature:
+#      best_image: Salt Lake.jpg  # The image to show on the gallery index page. Defaults to the last image.
+#      name: "Salt Lake" # Defaults to directory name, replacing _ with spaces
   
   
  mini_magick:
     thumbnail: # Preset name
         source: /Albums # source directory - change this to whatever you want
-        destination: Albums/thumbnail # generated destination directory
+        destination: Photos/thumbnail # generated destination directory
         resize: "100x70^" # standard imagemagick options - you can chain multiple commands
         gravity: "center"
         extent: "100x70"
         
- image:
-    source: /Albums
-    output: generated
-    presets:
-        album_thumb:
-            width: 200
-            attr:
-                class: album-image
-        medium:
-            width: 1200
-            attr:
-                class: image
-                
-  album_dir: /albums
+# image:
+#    source: Albums
+#    output: generated
+#    presets:
+#        album_thumb:
+#            width: 200
+#            attr:
+#                class: album-image
+#        medium:
+#            width: 1200
+#            attr:
+#                class: image
+#               
+#  album_dir: /albums
   
 # For example, if source is set to assets/images/_fullsize, the tag {% image stevenson/dream.jpg alt="A night scene" %} 
 # will look for a file at assets/images/_fullsize/stevenson/dream.jpg.
