@@ -361,3 +361,5 @@ gallery:
             width: 1200
             attr:
                 class: image
+                
+  album_dir: /albums
