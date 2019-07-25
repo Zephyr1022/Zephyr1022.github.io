@@ -15,8 +15,6 @@ header:
 
 <!DOCTYPE html>
 
-
-
 <html lang="en">
   
 <head>
@@ -32,13 +30,13 @@ header:
     </time>
 </header>	
 -->
-<!-- Custom styles for this template -->
-<link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
-  
-  
+	
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
 </head>
-
+	
 <body>
+<!--
 <article class="excerpt">
    <header>
 	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
@@ -47,6 +45,7 @@ header:
 	</time>
    </header>
 </article>
+-->
 
 <!--PLAY/PAUSE BUTTON
 <a href="#" title="Play video" class="play"></a>
@@ -78,7 +77,7 @@ header:
 -->
    
   <h1> Gallery </h1>
-  {%include image-gallery.html folder = "/Photography and Graphic Design/Photos/" %}
+  {%include image-gallery.html folder = "/Albums" %}
   
   <ul>
   {{#each example.custom.variables}}
@@ -102,7 +101,7 @@ header:
 <!-- Bootstrap core JavaScript
  ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-  {% include lightbox.html%}
+{% include lightbox.html %}
 	
   <script src "assets/js/jquery.min.js"></script>
   <script src="assets/js/ppause.js"></script>
