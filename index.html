@@ -15,20 +15,28 @@ header:
 
 <!DOCTYPE html>
 
-<head>
-  <header>
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-<time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate="pubdate">
-{{ post.date | date: "%b %d, %Y" }}
-</time>
-</header>
+
+
+<html lang="en">
   
+<head>
+<!--
+{% include head.html %}
+{% include twitter_card.html %}
+{% include og.html %}
+-->
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
+  <header>
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate="pubdate">
+    {{ post.date | date: "%b %d, %Y" }}
+    </time>
+ </header>
+  
 </head>
 
 <body>
-<html lang="en">
   
 <!--PLAY/PAUSE BUTTON
 <a href="#" title="Play video" class="play"></a>
