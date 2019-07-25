@@ -333,10 +333,10 @@ gallery:
   # The following options are for individual galleries.
   
   
- galleries:
-    saltlake:
-      best_image: mtn.jpg  # The image to show on the gallery index page. Defaults to the last image.
-      sort_reverse: true
-    EU2012:
-      best_image: saltlake.jpg  # The image to show on the gallery index page. Defaults to the last image.
-      name: "Golden" # Defaults to directory name, replacing _ with spaces
+ # galleries:
+  #  saltlake:
+  #    best_image: mtn.jpg  # The image to show on the gallery index page. Defaults to the last image.
+  #    sort_reverse: true
+  #  EU2012:
+  #    best_image: saltlake.jpg  # The image to show on the gallery index page. Defaults to the last image.
+  #    name: "Golden" # Defaults to directory name, replacing _ with spaces
