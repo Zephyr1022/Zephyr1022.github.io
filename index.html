@@ -75,6 +75,16 @@ header:
   {{/each}}
   </ul>
   
+<ul>
+{% for page in site.pages %}
+    {% if page.page_type == 'album' %}
+		{% if page.hidden %}{% continue %}{% endif %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>
+  
+  
   <!-- ################### -->
   <script src "assets/js/jquery.min.js"></script>
   {% include lightbox.html%}
