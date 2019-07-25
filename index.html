@@ -58,13 +58,14 @@ header:
 </center>
 -->
    
-<ul>
+  <h1> Photography and Graphic Design </h1>
+  {%include image-gallery.html folder = "/Photography and Graphic Design/Photos/" %}
+  
+  <ul>
   {{#each example.custom.variables}}
   <li>{{.}}</li>
   {{/each}}
-</ul>
-  <h1> Photography and Graphic Design </h1>
-  {%include image-gallery.html folder = "/Photography and Graphic Design/Photos/" %}
+  </ul>
   
   <!-- ################### -->
   <script src "assets/js/jquery.min.js"></script>
