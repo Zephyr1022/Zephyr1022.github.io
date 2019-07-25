@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                    : "minimal-mistakes-jekyll"
-# remote_theme             :  "mmistakes/minimal-mistakes"
+remote_theme             :  "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 
@@ -315,12 +315,12 @@ collections:
     
     
  #   YAML front matter is perhaps the most important aspect of creating sites through Jekyll. It allows you to control how Jekyll processes and builds pages, create page-specific variables, and triggers file processing. 
- 
+---
 plugins:
   - jekyll-gallery-generator
                               
 gallery:
-  dir: /Photography and Graphic Design/Photos/               # Path to the gallery
+  dir: photos               # Path to the gallery
   symlink: false            # false: copy images into _site. true: create symbolic links (saves disk space)
   title: "Photos"           # Title for gallery index page
   title_prefix: "Photos: "  # Title prefix for gallery pages. Gallery title = title_prefix + gallery_name
@@ -335,8 +335,8 @@ gallery:
   
  galleries:
     saltlake:
-      best_image: UNADJUSTEDNONRAW_thumb_4fb4.jpg  # The image to show on the gallery index page. Defaults to the last image.
+      best_image: mtn.jpg  # The image to show on the gallery index page. Defaults to the last image.
       sort_reverse: true
     EU2012:
-      best_image: UNADJUSTEDNONRAW_thumb_6ca8.jpg  # The image to show on the gallery index page. Defaults to the last image.
+      best_image: saltlake.jpg  # The image to show on the gallery index page. Defaults to the last image.
       name: "Golden" # Defaults to directory name, replacing _ with spaces
