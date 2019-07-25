@@ -238,6 +238,10 @@ plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-archives
+  
+# This will require each of these gems automatically.
+  gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+
 
 # mimic GitHub Pages with --safe
 whitelist:
