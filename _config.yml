@@ -349,3 +349,15 @@ gallery:
         resize: "100x70^" # standard imagemagick options - you can chain multiple commands
         gravity: "center"
         extent: "100x70"
+        
+ image:
+    output: generated
+    presets:
+        album_thumb:
+            width: 200
+            attr:
+                class: album-image
+        medium:
+            width: 1200
+            attr:
+                class: image
