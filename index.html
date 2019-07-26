@@ -36,66 +36,11 @@ header:
 </head>
 	
 <body>
-<!--
-<article class="excerpt">
-   <header>
-	<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-	<time datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate="pubdate">
-	{{ post.date | date: "%b %d, %Y" }}
-	</time>
-   </header>
-</article>
--->
-
-<!--PLAY/PAUSE BUTTON
-<a href="#" title="Play video" class="play"></a>
-<h1>CSS3 Play/Pause button</h1>
-<span class="headline">click/touch the button to see the animation.</span>
--->
-
-<!--  
-<div id="frame" >
-    <div id="photos" class="play">
-        <img src="/assets/image/icons/saltlake.jpg" >
-        <img src="/assets/image/icons/YObP083yQMSvrkHpDcOWmw_thumb_72dc.jpg" >
-    </div>
-</div>
-
-<figure>
-  <img src="assets/image/icons/saltlake.jpg" alt="this is a placeholder image">
-  <figcaption>This is a figure caption.</figcaption>
-</figure>
-
-<div class="page-header">
-  <h1>{{title}}</h1>
-  <p class="lead">{{description}}</p>
-</div>
-
-<center>
-<a href="https://Zephyr1022.github.io/Photos/"> <img src="https://Zephyr1022.github.io/Photos/saltlake.jpg" alt="HTML5 Icon" width="90%"></a>
-</center>
--->
    
   <h1> Gallery </h1>
   {%include image-gallery.html folder = "/Albums" %}
   
-  <ul>
-  {{#each example.custom.variables}}
-  <li>{{.}}</li>
-  {{/each}}
-  </ul>
-
 <!--Jekyll plugin to automatically generate photo gallery (album) from image folder.-->	
-<!--
-<ul>
-{% for page in site.pages %}
-    {% if page.page_type == 'album' %}
-		{% if page.hidden %}{% continue %}{% endif %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-    {% endif %}
-{% endfor %}
-</ul>
--->
 
 <!-- ################### -->
 <!-- Bootstrap core JavaScript
