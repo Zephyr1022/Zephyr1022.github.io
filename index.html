@@ -17,6 +17,7 @@ header:
 <html lang="en">
   
 <head>
+<!-- 你还可以包含 CSS，JavaScript，或 .html 文件中能包含的任何内容。换句话说，这使得导入成为了加载相关 HTML/CSS/JS 的神器 -->
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
 </head>
@@ -24,11 +25,11 @@ header:
 	
 <body>
 <h1> Gallery </h1>
- 
   
 <!--Jekyll plugin to automatically generate photo gallery (album) from image folder.-->	
 <!-- Bootstrap core JavaScript-->
 <!-- Placed at the end of the document so the pages load faster -->
+{% include lightbox.html %}
 	
 <script src "assets/js/jquery.min.js"></script>
 <script src="assets/js/ppause.js"></script>
