@@ -20,6 +20,7 @@ header:
 <!-- 你还可以包含 CSS，JavaScript，或 .html 文件中能包含的任何内容。换句话说，这使得导入成为了加载相关 HTML/CSS/JS 的神器 -->
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
+<link rel="stylesheet" href="/assets/css/blueimp-gallery.min.css" />
 </head>
 
 	
@@ -27,12 +28,56 @@ header:
 <h1> Gallery </h1>
 {%include image-gallery.html folder = "/Albums" %}
 
+<!-- The Gallery as lightbox dialog, should be a document body child element -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+	
+<div id="links">
+  <a href="Albums/Nature/Festival.jpg" title="Festival">
+    <img src="Albums/Nature/Festival.jpg" alt="Festival" />
+  </a>
+  <a href="Albums/Nature/Golden.jpg" title="Golden">
+    <img src="Albums/Nature/Golden.jpg" alt="Golden" />
+  </a>
+</div>
+	
+<!-- to display the images in the Gallery lightbox on click of the links -->	
+<script>
+  document.getElementById('links').onclick = function(event) {
+    event = event || window.event
+    var target = event.target || event.srcElement,
+      link = target.src ? target.parentNode : target,
+      options = { index: link, event: event },
+      links = this.getElementsByTagName('a')
+    blueimp.Gallery(links, options)
+  }
+</script>
+
+<!-- To initialize the Gallery with visible controls, add the CSS class blueimp-gallery-controls to the Gallery widget -->	
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
  <!--Jekyll plugin to automatically generate photo gallery (album) from image folder.-->	
 <!-- Bootstrap core JavaScript-->
 <!-- Placed at the end of the document so the pages load faster -->
 	
 <script src "assets/js/jquery.min.js"></script>
 <script src="assets/js/ppause.js"></script>
+<script src="assets/js/blueimp-gallery.min.js"></script>
 	
 </body>
 	
