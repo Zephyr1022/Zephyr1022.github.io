@@ -17,13 +17,19 @@ header:
 <html lang="en">
   
 <head>
+<title>{{ site.title }}</title>
+	
+<!-- Include the plyr.css stylsheet into your <head>.-->
+<link rel="stylesheet" href="path/to/plyr.css" />
+
 <!-- 你还可以包含 CSS，JavaScript，或 .html 文件中能包含的任何内容。换句话说，这使得导入成为了加载相关 HTML/CSS/JS 的神器 -->
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.scss">
 <link rel="stylesheet" href="/assets/css/blueimp-gallery.min.css" />
 </head>
 
-	
+
+
 <body>
 <h1> Gallery </h1>
 {%include image-gallery.html folder = "/Albums" %}
@@ -38,6 +44,20 @@ header:
   <a class="play-pause"></a>
   <ol class="indicator"></ol>
 </div>
+
+
+	
+<!-- customizable HTML5, YouTube and Vimeo media player  -->
+<video poster="/path/to/poster.jpg" id="player" playsinline controls>
+<source src="/path/to/video.mp4" type="video/mp4" />
+<source src="/path/to/video.webm" type="video/webm" />	
+<!-- Captions are optional -->
+<track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+</video>	
+<!-- Vimeo -->
+<div class="container">
+<div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="364384794"></div>
+	
 	
 	
 <!-- to display the images in the Gallery lightbox on click of the links -->	
@@ -51,10 +71,6 @@ header:
     blueimp.Gallery(links, options)
   }
 </script>
-
-
-	
-
 	
  <!--Jekyll plugin to automatically generate photo gallery (album) from image folder.-->	
 <!-- Bootstrap core JavaScript-->
@@ -63,6 +79,12 @@ header:
 <script src "assets/js/jquery.min.js"></script>
 <script src="assets/js/ppause.js"></script>
 <script src="assets/js/blueimp-gallery.min.js"></script>
+	
+<!-- ----------------------------------------------------------------------------------------------- -->
+<script src="path/to/plyr.js"></script>
+<script>
+    const player = new Plyr('#player');
+</script>
 	
 </body>
 	
